@@ -31,7 +31,8 @@ CREATE TABLE "entcom" (
     "obscom" VARCHAR(25),
     "datcom" DATE NOT NULL,
     "numfou" INT NOT NULL,
-    PRIMARY KEY("numcom")
+    PRIMARY KEY("numcom"),
+    FOREIGN KEY("numfou") REFERENCES "fournis"("numfou")
 );
 
 CREATE TABLE "ligcom" (
