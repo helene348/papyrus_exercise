@@ -1,4 +1,8 @@
-
+drop table if exists "FOURNIS" cascade; 
+drop table if exists "LIGCOM" cascade;
+drop table if exists "ENTCOM" cascade;
+drop table if exists "VENTE" cascade;
+drop table if exists "PRODUIT" cascade;
 
 create table "PRODUIT" (
     "CODART" char(4) not null,
@@ -56,3 +60,9 @@ create table "ENTCOM" (
     primary key("NUMCOM","CODART"),
     foreign key("CODART") references "PRODUIT"("CODART")
 );
+
+alter table "FOURNIS" 
+add column "CREFOU" varchar(15),
+add column "MODFOU" varchar(15),
+add column "DTCFOU" timestamp,
+add column "DTMDOU" timestamp;
